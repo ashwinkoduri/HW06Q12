@@ -1,0 +1,22 @@
+{
+  # Calculate mean, excluding missing values
+  mean_val <- mean(og, na.rm = TRUE)
+  
+  # Calculate median, excluding missing values
+  median_val <- median(og, na.rm = TRUE)
+  
+  # Use table() to count the occurrences of each value and calculate mode
+  counts <- table(og)
+  mode_val <- as.numeric(names(counts)[which.max(counts)])
+  
+  # Create a data frame
+  df <- data.frame(
+    original = og,
+    mean = og - mean_val,
+    median = og - median_val,
+    mode = og - mode_val
+  )
+  
+  # Return the data frame
+  return(df)
+}
