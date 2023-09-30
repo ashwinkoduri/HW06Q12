@@ -1,4 +1,4 @@
-{
+vecSummary <- function(og){
   # Calculate mean, excluding missing values
   mean_val <- mean(og, na.rm = TRUE)
   
